@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# use like map-repos git status
+
+REPOS_DIR=${REPOS_DIR:-~/git/github.com/andrewrothstein}
+REPO_PREFIX=${REPOSE_PREFIX:-ansible-}
+for i in ${REPOS_DIR}/${REPO_PREFIX}*;
+do
+    echo $i;
+    cd $i;
+    $@;
+done
